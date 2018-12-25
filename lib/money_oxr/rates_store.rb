@@ -43,7 +43,7 @@ module MoneyOXR
       return if loaded? && !stale?
 
       with_cache_file_lock do
-        load_from_cache_path if cache_path && File.exists?(cache_path)
+        load_from_cache_path if cache_path && File.exist?(cache_path)
         load_from_api if app_id && stale?
       end
     end
